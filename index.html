@@ -1,0 +1,155 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <link rel="stylesheet" href="css/index.css" />
+
+    <title>Run The World</title>
+</head>
+
+<body class="body">
+    <div id="login">
+        <div id="register">
+            <h1>Welcome to Run the World</h1>
+            <h3>Create an Account</h3>
+            <div>
+                <input class="input" type="email" id="register-email-input" placeholder="email">
+                <br />
+                <input class="input" type="password" id="register-password-input" placeholder="password">
+                <br /><br />
+                <button class="button" id="register-button">Register</button>
+            </div>
+        </div>
+<!--LOGIN STARTS HERE -------------------------------------------------------------------------------------------------->
+        <div id="login">
+            <h3>Login</h3>
+            <div>
+                <input class="input" type="email" id="login-email-input" placeholder="email">
+                <br />
+                <input class="input" type="password" id="login-password-input" placeholder="password">
+                <br /><br />
+                <button class="button" type="button" id="login-button">Login</button>
+                <!-- <button class="btn gifts" type="button"><a href="#">View Category</a></button> -->
+            </div>
+        </div>
+    </div>
+<!--LOGIN ENDS HERE -------------------------------------------------------------------------------------------------->
+
+<!--GOALS STARTS HERE -------------------------------------------------------------------------------------------------->
+    <div id="goals">
+        <h1>Goals</h1>
+        <div>
+            <select class="dropdown" data-settings='{"wrapperClass":"metro"}'>
+                <option value="1">Endurance</option>
+                <option value="2">Weight Loss</option>
+                <option value="3">Speed</option>
+            </select>
+            <br /><br /><br /><br />
+
+            <label>Age: </label><input type="age" size="3" id="age">
+            <label>Weight: </label><input type="weight" size="4" id="weight">
+            <br /><br />
+
+            <div>
+                <textarea id="some-data-textarea"></textarea> -->
+                <button class="button" onclick="startMain();">Next</button>
+                
+            </div>
+            <br />
+        </div>
+    </div> -->
+<!--GOALS ENDS HERE -------------------------------------------------------------------------------------------------->
+
+<!--MAIN STARTS HERE -------------------------------------------------------------------------------------------------->
+        <div id="main">
+            <h3>Select Your Music</h3>
+
+            <select class="dropdown" id="musicdropdown" data-settings='{"wrapperClass":"metro"}' onchange='getSelectedValue();'>
+                <option value="1">Beyonce</option>
+                <option value="2">Arcade Fire</option>
+                <option value="3">Lizzo</option>
+                <option value="4">90s & 00s</option>
+            </select>
+
+            <button id="play-media-button" class='musicButton' onclick="useMedia();">PLAY</button>
+            <button id="pause-media-button" class='musicButton'>PAUSE</button>
+            <button id="stop-media-button" class='musicButton'>STOP</button>
+            <button id="mute-volume-button" class='musicButton'>MUTE</button>
+
+            <br /><br />
+        
+
+            <div>
+                <button class="button" id="save-data-button" onclick="startProgress();">>Enter Progress</button>
+            </div>
+      
+        <!-- testing -->
+
+        <div id="timerContainer">
+            <span id="some-data-textarea" class="timer">00:00:00:000</span>
+            <button class="startTimer reset" onclick="startTimer()">Start Time</button>
+            <button class="pauseTimer reset" onclick="pauseTimer()">Pause</button>
+            <button class="resetTimer reset" onclick="resetTimer()">Reset</button>
+            <button class="button" type="button" onclick="saveDataWithFirebase();">Save Time</button>
+        </div>
+    </div>
+<!--MAIN ENDS HERE -------------------------------------------------------------------------------------------------->
+
+<!--PROGRESS STARTS HERE -------------------------------------------------------------------------------------------------->
+    <div id="progress">
+        <h1>Track Your Progress</h1>
+
+        <div>
+            <button id="writeToFile">Add Distance</button>
+            <br /> <br />
+            <button id="readFile">Submit Progress</button>
+            <button id="emptyList">Clear Progress</button>
+        </div>
+
+        <div id="distance"></div>
+
+        <div class="total">
+            <label>Total Distance: </label><input readonly type="number" value="0" id="totalDistance" />
+        </div>
+    </div>
+    <!--PROGRESS ENDS HERE -------------------------------------------------------------------------------------------------->
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="js/firebase/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="js/firebase/firebase-auth.js"></script>
+    <script src="js/firebase/firebase-database.js"></script>
+    <script src="js/firebase/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBe410D78gc0cuW0E4UFYny4iSX1UxcIbU",
+            authDomain: "run-the-world-d0df6.firebaseapp.com",
+            databaseURL: "https://run-the-world-d0df6.firebaseio.com",
+            projectId: "run-the-world-d0df6",
+            storageBucket: "run-the-world-d0df6.appspot.com",
+            messagingSenderId: "117117801179",
+            appId: "1:117117801179:web:5f069983fa27a79e0b72fe",
+            measurementId: "G-HXQDMSZSVM"
+        };
+        // Initialize Firebase
+        var app = firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="cordova.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/media.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/stopwatch.js"></script>
+</body>
+
+</html>

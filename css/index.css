@@ -1,0 +1,58 @@
+body {
+    background-color: #254F6E;
+    color: #ffffff;
+}
+
+header {
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+}
+
+.input {
+    border-color: #00A9DE;
+    width: 90%;
+}
+
+button {
+    background-color: #00A9DE;
+    border-color: #00A9DE;
+    color: #ffffff;
+    width: 90%;
+}
+
+button a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.map {
+    border: #254F6E;
+    width: 75%;
+}
+
+.musicButton {
+    width: 25%;
+    background-color: #00A9DE;
+    border-color: #00A9DE;
+    color: #ffffff;
+}
+
+#music {
+    background-color: #ffffff;
+    color: #254F6E;
+}
+
+img {
+    width: 100%;
+}
+
+.total {
+    position: absolute;
+    left: 10px;
+    top: 650px;
+}
+
+
